@@ -1,0 +1,10 @@
+build/
+# General
+.DS_Store
+# IDEs
+.vscode/
+.idea/
+# Environment variables
+.env
+.env.local
+.env.*.local

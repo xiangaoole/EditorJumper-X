@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- 启用沙盒 -->
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	
+	<!-- ========== AppleScript 权限 ========== -->
+	<!-- 允许向 Xcode 发送 AppleScript 事件 -->
+	<key>com.apple.security.automation.apple-events</key>
+	<true/>
+	
+	<!-- 明确指定可以控制的应用程序 -->
+	<key>com.apple.security.temporary-exception.apple-events</key>
+	<array>
+		<string>com.apple.dt.Xcode</string>
+		<string>com.microsoft.VSCode</string>
+		<string>com.torusknot.SourceTreeNotMAS</string>
+	</array>
+	
+	<!-- 允许执行 AppleScript（旧版权限，保留兼容性） -->
+	<key>com.apple.security.scripting-targets</key>
+	<dict>
+		<key>com.apple.dt.Xcode</key>
+		<array>
+			<string>com.apple.dt.Xcode</string>
+		</array>
+	</dict>
+	
+	<!-- ========== 文件系统权限 ========== -->
+	<!-- 允许访问用户选择的文件（只读） -->
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<true/>
+	
+	<!-- 允许访问用户选择的文件（读写） -->
+	<key>com.apple.security.files.user-selected.read-write</key>
+	<true/>
+	
+	<!-- 允许访问下载文件夹 -->
+	<key>com.apple.security.files.downloads.read-write</key>
+	<true/>
+	
+	<!-- 允许访问特定系统路径 -->
+	<key>com.apple.security.temporary-exception.files.absolute-path.read-only</key>
+	<array>
+		<string>/usr/bin/open</string>
+		<string>/usr/bin/osascript</string>
+		<string>/System/Library/CoreServices/</string>
+		<string>/Applications/</string>
+		<string>/Users/</string>
+	</array>
+	
+	<!-- 允许访问特定路径（读写） -->
+	<key>com.apple.security.temporary-exception.files.absolute-path.read-write</key>
+	<array>
+		<string>/tmp/</string>
+	</array>
+	
+	<!-- ========== 应用程序启动权限 ========== -->
+	<!-- 允许启动外部应用程序 -->
+	<key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
+	<array>
+		<string>com.apple.coreservices.launchservicesd</string>
+		<string>com.apple.lsd.mapdb</string>
+		<string>com.apple.dock.server</string>
+		<string>com.apple.windowserver.active</string>
+	</array>
+	
+	<!-- ========== 网络和进程权限 ========== -->
+	<!-- 允许网络访问（如果需要） -->
+	<key>com.apple.security.network.client</key>
+	<true/>
+	
+	<!-- 允许执行外部程序 -->
+	<key>com.apple.security.cs.allow-jit</key>
+	<true/>
+	
+	<!-- 允许访问进程信息 -->
+	<key>com.apple.security.cs.debugger</key>
+	<true/>
+	
+	<!-- ========== 其他系统权限 ========== -->
+	<!-- 允许访问设备信息 -->
+	<key>com.apple.security.device.audio-input</key>
+	<false/>
+	
+	<!-- 允许访问相机（如果需要） -->
+	<key>com.apple.security.device.camera</key>
+	<false/>
+	
+	<!-- 允许打印（如果需要） -->
+	<key>com.apple.security.print</key>
+	<true/>
+</dict>
+</plist>

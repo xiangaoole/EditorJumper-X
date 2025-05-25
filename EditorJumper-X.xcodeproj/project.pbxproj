@@ -6,20 +6,177 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CE12C3DB2DE31FE100288BF0 /* EditorJumperForXcodeXPCService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = CE35FEE22DE2BD14004D8104 /* EditorJumperForXcodeXPCService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE35FEC92DE2B2BB004D8104 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE35FEC82DE2B2BB004D8104 /* Cocoa.framework */; };
+		CE35FED52DE2B2BB004D8104 /* EditorJumperForXcode.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE35FEDB2DE2B321004D8104 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE35FECA2DE2B2BB004D8104 /* XcodeKit.framework */; };
+		CE35FEDC2DE2B321004D8104 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE35FECA2DE2B2BB004D8104 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE35FEF42DE2C0DB004D8104 /* EditorJumperForXcodeXPCService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = CE35FEE22DE2BD14004D8104 /* EditorJumperForXcodeXPCService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE12C3DC2DE31FE100288BF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE35FE652DE06DA8004D8104 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE35FEE12DE2BD14004D8104;
+			remoteInfo = EditorJumperForXcodeXPCService;
+		};
+		CE35FED32DE2B2BB004D8104 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE35FE652DE06DA8004D8104 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE35FEC52DE2B2BB004D8104;
+			remoteInfo = EditorJumperForXcode;
+		};
+		CE35FEF52DE2C0DB004D8104 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE35FE652DE06DA8004D8104 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE35FEE12DE2BD14004D8104;
+			remoteInfo = EditorJumperForXcodeXPCService;
+		};
+		CE35FEF82DE2C0FA004D8104 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE35FE652DE06DA8004D8104 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE35FEE12DE2BD14004D8104;
+			remoteInfo = EditorJumperForXcodeXPCService;
+		};
+		CE35FEFA2DE2C153004D8104 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE35FE652DE06DA8004D8104 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE35FEE12DE2BD14004D8104;
+			remoteInfo = EditorJumperForXcodeXPCService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE12C3DE2DE31FE100288BF0 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				CE12C3DB2DE31FE100288BF0 /* EditorJumperForXcodeXPCService.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE35FED62DE2B2BB004D8104 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CE35FED52DE2B2BB004D8104 /* EditorJumperForXcode.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE35FEDD2DE2B321004D8104 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE35FEDC2DE2B321004D8104 /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE35FEF72DE2C0DB004D8104 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				CE35FEF42DE2C0DB004D8104 /* EditorJumperForXcodeXPCService.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EditorJumper-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EditorJumperForXcode.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE35FEC82DE2B2BB004D8104 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CE35FECA2DE2B2BB004D8104 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		CE35FEE22DE2BD14004D8104 /* EditorJumperForXcodeXPCService.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = EditorJumperForXcodeXPCService.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CE25AE2F2DE2F98500FA3911 /* Exceptions for "EditorJumper-X" folder in "EditorJumper-X" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CE35FE6C2DE06DA8004D8104 /* EditorJumper-X */;
+		};
+		CE35FED92DE2B2BB004D8104 /* Exceptions for "EditorJumperForXcode" folder in "EditorJumperForXcode" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CE35FEC52DE2B2BB004D8104 /* EditorJumperForXcode */;
+		};
+		CE35FEEF2DE2BD14004D8104 /* Exceptions for "EditorJumperForXcodeXPCService" folder in "EditorJumperForXcodeXPCService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CE35FEE12DE2BD14004D8104 /* EditorJumperForXcodeXPCService */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CE35FE6F2DE06DA8004D8104 /* EditorJumper-X */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CE25AE2F2DE2F98500FA3911 /* Exceptions for "EditorJumper-X" folder in "EditorJumper-X" target */,
+			);
 			path = "EditorJumper-X";
+			sourceTree = "<group>";
+		};
+		CE35FECC2DE2B2BB004D8104 /* EditorJumperForXcode */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CE35FED92DE2B2BB004D8104 /* Exceptions for "EditorJumperForXcode" folder in "EditorJumperForXcode" target */,
+			);
+			path = EditorJumperForXcode;
+			sourceTree = "<group>";
+		};
+		CE35FEE32DE2BD14004D8104 /* EditorJumperForXcodeXPCService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CE35FEEF2DE2BD14004D8104 /* Exceptions for "EditorJumperForXcodeXPCService" folder in "EditorJumperForXcodeXPCService" target */,
+			);
+			path = EditorJumperForXcodeXPCService;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE35FE6A2DE06DA8004D8104 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE35FEC32DE2B2BB004D8104 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE35FEC92DE2B2BB004D8104 /* Cocoa.framework in Frameworks */,
+				CE35FEDB2DE2B321004D8104 /* XcodeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE35FEDF2DE2BD14004D8104 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				CE35FE6F2DE06DA8004D8104 /* EditorJumper-X */,
+				CE35FECC2DE2B2BB004D8104 /* EditorJumperForXcode */,
+				CE35FEE32DE2BD14004D8104 /* EditorJumperForXcodeXPCService */,
+				CE35FEC72DE2B2BB004D8104 /* Frameworks */,
 				CE35FE6E2DE06DA8004D8104 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +201,19 @@
 			isa = PBXGroup;
 			children = (
 				CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */,
+				CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */,
+				CE35FEE22DE2BD14004D8104 /* EditorJumperForXcodeXPCService.xpc */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CE35FEC72DE2B2BB004D8104 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE35FEC82DE2B2BB004D8104 /* Cocoa.framework */,
+				CE35FECA2DE2B2BB004D8104 /* XcodeKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +226,14 @@
 				CE35FE692DE06DA8004D8104 /* Sources */,
 				CE35FE6A2DE06DA8004D8104 /* Frameworks */,
 				CE35FE6B2DE06DA8004D8104 /* Resources */,
+				CE35FED62DE2B2BB004D8104 /* Embed Foundation Extensions */,
+				CE12C3DE2DE31FE100288BF0 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CE35FED42DE2B2BB004D8104 /* PBXTargetDependency */,
+				CE12C3DD2DE31FE100288BF0 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				CE35FE6F2DE06DA8004D8104 /* EditorJumper-X */,
@@ -69,6 +244,55 @@
 			productName = "EditorJumper-X";
 			productReference = CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CE35FEC52DE2B2BB004D8104 /* EditorJumperForXcode */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE35FEDA2DE2B2BB004D8104 /* Build configuration list for PBXNativeTarget "EditorJumperForXcode" */;
+			buildPhases = (
+				CE35FEC22DE2B2BB004D8104 /* Sources */,
+				CE35FEC32DE2B2BB004D8104 /* Frameworks */,
+				CE35FEC42DE2B2BB004D8104 /* Resources */,
+				CE35FEDD2DE2B321004D8104 /* Embed Frameworks */,
+				CE35FEF72DE2C0DB004D8104 /* Embed XPC Services */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE35FEF62DE2C0DB004D8104 /* PBXTargetDependency */,
+				CE35FEF92DE2C0FA004D8104 /* PBXTargetDependency */,
+				CE35FEFB2DE2C153004D8104 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CE35FECC2DE2B2BB004D8104 /* EditorJumperForXcode */,
+			);
+			name = EditorJumperForXcode;
+			packageProductDependencies = (
+			);
+			productName = EditorJumperForXcode;
+			productReference = CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
+		CE35FEE12DE2BD14004D8104 /* EditorJumperForXcodeXPCService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE35FEF02DE2BD14004D8104 /* Build configuration list for PBXNativeTarget "EditorJumperForXcodeXPCService" */;
+			buildPhases = (
+				CE35FEDE2DE2BD14004D8104 /* Sources */,
+				CE35FEDF2DE2BD14004D8104 /* Frameworks */,
+				CE35FEE02DE2BD14004D8104 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CE35FEE32DE2BD14004D8104 /* EditorJumperForXcodeXPCService */,
+			);
+			name = EditorJumperForXcodeXPCService;
+			packageProductDependencies = (
+			);
+			productName = EditorJumperForXcodeXPCService;
+			productReference = CE35FEE22DE2BD14004D8104 /* EditorJumperForXcodeXPCService.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +305,12 @@
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
 					CE35FE6C2DE06DA8004D8104 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					CE35FEC52DE2B2BB004D8104 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					CE35FEE12DE2BD14004D8104 = {
 						CreatedOnToolsVersion = 16.3;
 					};
 				};
@@ -100,12 +330,28 @@
 			projectRoot = "";
 			targets = (
 				CE35FE6C2DE06DA8004D8104 /* EditorJumper-X */,
+				CE35FEE12DE2BD14004D8104 /* EditorJumperForXcodeXPCService */,
+				CE35FEC52DE2B2BB004D8104 /* EditorJumperForXcode */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE35FE6B2DE06DA8004D8104 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE35FEC42DE2B2BB004D8104 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE35FEE02DE2BD14004D8104 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +368,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE35FEC22DE2B2BB004D8104 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE35FEDE2DE2BD14004D8104 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE12C3DD2DE31FE100288BF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE35FEE12DE2BD14004D8104 /* EditorJumperForXcodeXPCService */;
+			targetProxy = CE12C3DC2DE31FE100288BF0 /* PBXContainerItemProxy */;
+		};
+		CE35FED42DE2B2BB004D8104 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE35FEC52DE2B2BB004D8104 /* EditorJumperForXcode */;
+			targetProxy = CE35FED32DE2B2BB004D8104 /* PBXContainerItemProxy */;
+		};
+		CE35FEF62DE2C0DB004D8104 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE35FEE12DE2BD14004D8104 /* EditorJumperForXcodeXPCService */;
+			targetProxy = CE35FEF52DE2C0DB004D8104 /* PBXContainerItemProxy */;
+		};
+		CE35FEF92DE2C0FA004D8104 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE35FEE12DE2BD14004D8104 /* EditorJumperForXcodeXPCService */;
+			targetProxy = CE35FEF82DE2C0FA004D8104 /* PBXContainerItemProxy */;
+		};
+		CE35FEFB2DE2C153004D8104 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE35FEE12DE2BD14004D8104 /* EditorJumperForXcodeXPCService */;
+			targetProxy = CE35FEFA2DE2C153004D8104 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CE35FE772DE06DA9004D8104 /* Debug */ = {
@@ -252,9 +540,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QRBH27G89X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "EditorJumper-X/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -277,9 +568,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QRBH27G89X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "EditorJumper-X/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -288,6 +582,106 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CE35FED72DE2B2BB004D8104 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EditorJumperForXcode/EditorJumperForXcode.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QRBH27G89X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EditorJumperForXcode;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CE35FED82DE2B2BB004D8104 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EditorJumperForXcode/EditorJumperForXcode.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QRBH27G89X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EditorJumperForXcode;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CE35FEF12DE2BD14004D8104 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EditorJumperForXcodeXPCService/EditorJumperForXcodeXPCService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QRBH27G89X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EditorJumperForXcodeXPCService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EditorJumperForXcodeXPCService;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need to control Xcode to retrieve the current file path.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CE35FEF22DE2BD14004D8104 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = EditorJumperForXcodeXPCService/EditorJumperForXcodeXPCService.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QRBH27G89X;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EditorJumperForXcodeXPCService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EditorJumperForXcodeXPCService;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need to control Xcode to retrieve the current file path.";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -310,6 +704,24 @@
 			buildConfigurations = (
 				CE35FE7A2DE06DA9004D8104 /* Debug */,
 				CE35FE7B2DE06DA9004D8104 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE35FEDA2DE2B2BB004D8104 /* Build configuration list for PBXNativeTarget "EditorJumperForXcode" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE35FED72DE2B2BB004D8104 /* Debug */,
+				CE35FED82DE2B2BB004D8104 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE35FEF02DE2BD14004D8104 /* Build configuration list for PBXNativeTarget "EditorJumperForXcodeXPCService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE35FEF12DE2BD14004D8104 /* Debug */,
+				CE35FEF22DE2BD14004D8104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
