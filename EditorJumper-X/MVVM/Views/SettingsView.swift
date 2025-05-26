@@ -75,7 +75,7 @@ struct SettingsView: View {
                     TextField("Enter path to Cursor executable", text: $viewModel.cursorPath)
                         .textFieldStyle(.roundedBorder)
                         .font(.system(.body, design: .monospaced))
-                        .onChange(of: viewModel.cursorPath) {
+                        .onChange(of: viewModel.cursorPath) { _ in
                             viewModel.validateCurrentPath()
                         }
                     

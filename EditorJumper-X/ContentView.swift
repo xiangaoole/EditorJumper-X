@@ -64,7 +64,7 @@ struct ContentView: View {
         .sheet(isPresented: $viewModel.showingSettings) {
             SettingsView()
         }
-        .onChange(of: appState.shouldShowSettings) { _, shouldShow in
+        .onChange(of: appState.shouldShowSettings) { shouldShow in
             if shouldShow {
                 viewModel.showingSettings = true
                 appState.shouldShowSettings = false
@@ -76,9 +76,9 @@ struct ContentView: View {
         VStack(spacing: 16) {
             // App Icon and Title
             HStack(spacing: 12) {
-                Image(systemName: "arrow.triangle.2.circlepath")
-                    .font(.system(size: 32, weight: .medium))
-                    .foregroundColor(.accentColor)
+                Image("Logo")
+                    .resizable()
+                    .frame(width: 48, height: 48)
                 
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Editor Jumper")
