@@ -100,6 +100,7 @@ class EditorJumperForXcodeXPCService: NSObject, EditorJumperForXcodeXPCServicePr
         process.launchPath = cursorPath
         process.arguments = [
             "-g", "\(filePath):\(line):\(column)",
+            "-a", "\(getProjectPath(filePath))"
         ]
             
         DispatchQueue.global().async {

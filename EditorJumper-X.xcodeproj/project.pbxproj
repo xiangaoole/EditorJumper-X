@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE0B75962DE41496000B6DDF /* EditorJumperForXcodeXPCService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = CE35FEE22DE2BD14004D8104 /* EditorJumperForXcodeXPCService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		464B72692DE47125009E4CE3 /* EditorJumperForXcodeXPCService.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 464B72682DE47125009E4CE3 /* EditorJumperForXcodeXPCService.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE35FEC92DE2B2BB004D8104 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE35FEC82DE2B2BB004D8104 /* Cocoa.framework */; };
 		CE35FED52DE2B2BB004D8104 /* EditorJumperForXcode.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CE35FEDB2DE2B321004D8104 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE35FECA2DE2B2BB004D8104 /* XcodeKit.framework */; };
@@ -15,13 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CE0B75972DE41496000B6DDF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE35FE652DE06DA8004D8104 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE35FEE12DE2BD14004D8104;
-			remoteInfo = EditorJumperForXcodeXPCService;
-		};
 		CE35FED32DE2B2BB004D8104 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE35FE652DE06DA8004D8104 /* Project object */;
@@ -46,13 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CE0B75992DE41496000B6DDF /* Embed XPC Services */ = {
+		464B726A2DE47125009E4CE3 /* Embed XPC Services */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
 			dstSubfolderSpec = 16;
 			files = (
-				CE0B75962DE41496000B6DDF /* EditorJumperForXcodeXPCService.xpc in Embed XPC Services */,
+				464B72692DE47125009E4CE3 /* EditorJumperForXcodeXPCService.xpc in Embed XPC Services */,
 			);
 			name = "Embed XPC Services";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		464B72682DE47125009E4CE3 /* EditorJumperForXcodeXPCService.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; name = EditorJumperForXcodeXPCService.xpc; path = "../../../Library/Developer/Xcode/DerivedData/EditorJumper-X-dqjdinrkbuxzjzgekhglucmesorn/Build/Products/Release/EditorJumperForXcodeXPCService.xpc"; sourceTree = "<group>"; };
 		CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EditorJumper-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EditorJumperForXcode.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE35FEC82DE2B2BB004D8104 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -191,6 +185,7 @@
 		CE35FEC72DE2B2BB004D8104 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				464B72682DE47125009E4CE3 /* EditorJumperForXcodeXPCService.xpc */,
 				CE35FEC82DE2B2BB004D8104 /* Cocoa.framework */,
 				CE35FECA2DE2B2BB004D8104 /* XcodeKit.framework */,
 			);
@@ -208,13 +203,11 @@
 				CE35FE6A2DE06DA8004D8104 /* Frameworks */,
 				CE35FE6B2DE06DA8004D8104 /* Resources */,
 				CE35FED62DE2B2BB004D8104 /* Embed Foundation Extensions */,
-				CE0B75992DE41496000B6DDF /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				CE35FED42DE2B2BB004D8104 /* PBXTargetDependency */,
-				CE0B75982DE41496000B6DDF /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				CE35FE6F2DE06DA8004D8104 /* EditorJumper-X */,
@@ -234,6 +227,7 @@
 				CE35FEC32DE2B2BB004D8104 /* Frameworks */,
 				CE35FEC42DE2B2BB004D8104 /* Resources */,
 				CE35FEDD2DE2B321004D8104 /* Embed Frameworks */,
+				464B726A2DE47125009E4CE3 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
@@ -364,11 +358,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CE0B75982DE41496000B6DDF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE35FEE12DE2BD14004D8104 /* EditorJumperForXcodeXPCService */;
-			targetProxy = CE0B75972DE41496000B6DDF /* PBXContainerItemProxy */;
-		};
 		CE35FED42DE2B2BB004D8104 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE35FEC52DE2B2BB004D8104 /* EditorJumperForXcode */;
@@ -515,17 +504,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "EditorJumper-X/EditorJumper_X.entitlements";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = QRBH27G89X;
+				DEVELOPMENT_TEAM = QRBH27G89X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EditorJumper-X/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "This app needs to send Apple Events to Xcode to retrieve the current file path and interact with the editor.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -535,7 +524,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Editor Jumper for Xcode";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -550,15 +538,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "EditorJumper-X/EditorJumper_X.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QRBH27G89X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EditorJumper-X/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "This app needs to send Apple Events to Xcode to retrieve the current file path and interact with the editor.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -568,6 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Editor Jumper for Xcode";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -606,10 +597,12 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_ENTITLEMENTS = EditorJumperForXcode/EditorJumperForXcode.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QRBH27G89X;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = QRBH27G89X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper fox Xcode";
@@ -622,6 +615,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Editor Jumper forXcode - Ext";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -658,10 +653,12 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_ENTITLEMENTS = EditorJumperForXcodeXPCService/EditorJumperForXcodeXPCService.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QRBH27G89X;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=macosx*]" = QRBH27G89X;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcodeXPCService/Info.plist;
@@ -671,6 +668,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Editor Jumper for Xcode - XPC Service";
 				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
