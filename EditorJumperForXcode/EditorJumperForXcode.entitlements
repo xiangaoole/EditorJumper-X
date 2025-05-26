@@ -4,8 +4,6 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
-	
-	<!-- 允许与 XPC Service 通信 -->
 	<key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
 	<array>
 		<string>com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService</string>

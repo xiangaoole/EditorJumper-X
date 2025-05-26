@@ -13,7 +13,7 @@ import Foundation
     func getCurrentFilePath(with reply: @escaping (String?, Error?) -> Void)
 
     /// Combined operation: get current file path and open in Cursor
-    func jumpToCursor(line: Int, column: Int, with reply: @escaping (Bool, Error?, String?) -> Void)
+    func openInCursor(line: Int, column: Int, with reply: @escaping (Bool, Error?, String?) -> Void)
 }
 
 /*
@@ -26,7 +26,7 @@ import Foundation
  Once you have a connection to the service, you can use it like this:
 
      if let proxy = connectionToService.remoteObjectProxy as? EditorJumperForXcodeXPCServiceProtocol {
-         proxy.jumpToCursor(line: 10, column: 5) { success, filePath, error in
+         proxy.openInCursor(line: 10, column: 5) { success, filePath, error in
              if success {
                  NSLog("Successfully opened file: \(filePath ?? "unknown") in Cursor")
              } else {

@@ -2,19 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<!-- 主应用只需要连接 XPC Service 的权限 -->
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.com.haroldgao.EditorJumper-X</string>
+	</array>
 	<key>com.apple.security.temporary-exception.mach-lookup.global-name</key>
 	<array>
 		<string>com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService</string>
 	</array>
-	
-	<!-- 如果主应用需要直接测试 AppleScript，可以保留这些权限 -->
-	<!-- 但在生产环境中，建议移除这些权限，让 XPC Service 处理所有 Xcode 交互 -->
-	<!-- <key>com.apple.security.automation.apple-events</key>
-	<true/>
-	<key>com.apple.security.temporary-exception.apple-events</key>
-	<array>
-		<string>com.apple.dt.Xcode</string>
-	</array> -->
 </dict>
 </plist>

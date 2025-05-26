@@ -14,10 +14,14 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         print("🚀 Extension called!")
         print("📋 Command identifier: \(invocation.commandIdentifier)")
         
-        jumpToCursor(with: invocation, completionHandler: completionHandler)
+        if invocation.commandIdentifier.hasSuffix(".OpenSettings") {
+            openSettings(completionHandler: completionHandler)
+        } else {
+            openInCursor(with: invocation, completionHandler: completionHandler)
+        }
     }
     
-    private func jumpToCursor(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
+    private func openInCursor(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
         // 获取当前选择（光标位置）
         let selections = invocation.buffer.selections
         var lineNumber = 0
@@ -37,16 +41,14 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         let service = connection.remoteObjectProxy as? EditorJumperForXcodeXPCServiceProtocol
         
-        service?.jumpToCursor(line: lineNumber, column: columnNumber) { _, error, _ in
+        service?.openInCursor(line: lineNumber, column: columnNumber) { _, error, log in
             DispatchQueue.main.async {
                 connection.invalidate()
                 
                 if let error = error {
-                    print("❌ Failed to jump to Cursor: \(error)")
-                    
                     let alert = NSAlert()
                     alert.messageText = "Jump Failed"
-                    alert.informativeText = "Failed to jump to Cursor: \(error.localizedDescription)"
+                    alert.informativeText = "❌ Failed to jump to Cursor: \(error.localizedDescription)\n\(log ?? "")"
                     alert.alertStyle = .warning
                     alert.addButton(withTitle: "OK")
                     alert.runModal()
@@ -55,6 +57,62 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                 }
                 
                 completionHandler(error)
+            }
+        }
+    }
+    
+    private func openSettings(completionHandler: @escaping (Error?) -> Void) {
+        print("🔧 Opening Settings...")
+        
+        // 使用 Process 启动主应用并传递参数
+        let process = Process()
+        
+        // 获取主应用的路径
+        let mainAppBundleID = "com.haroldgao.EditorJumper-X"
+        
+        // 尝试通过 Bundle ID 找到应用路径
+        if let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: mainAppBundleID) {
+            let appPath = appURL.appendingPathComponent("Contents/MacOS/EditorJumper-X").path
+            
+            process.launchPath = appPath
+            process.arguments = ["--show-settings"]
+            
+            do {
+                try process.run()
+                print("✅ Successfully launched settings")
+                completionHandler(nil)
+            } catch {
+                print("❌ Failed to launch settings: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    let alert = NSAlert()
+                    alert.messageText = "Settings Failed"
+                    alert.informativeText = "❌ Failed to open settings: \(error.localizedDescription)"
+                    alert.alertStyle = .warning
+                    alert.addButton(withTitle: "OK")
+                    alert.runModal()
+                    completionHandler(error)
+                }
+            }
+        } else {
+            // 如果找不到应用，尝试使用 open 命令
+            process.launchPath = "/usr/bin/open"
+            process.arguments = ["-b", mainAppBundleID, "--args", "--show-settings"]
+            
+            do {
+                try process.run()
+                print("✅ Successfully opened settings via open command")
+                completionHandler(nil)
+            } catch {
+                print("❌ Failed to open settings: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    let alert = NSAlert()
+                    alert.messageText = "Settings Failed"
+                    alert.informativeText = "❌ Failed to open settings: \(error.localizedDescription)"
+                    alert.alertStyle = .warning
+                    alert.addButton(withTitle: "OK")
+                    alert.runModal()
+                    completionHandler(error)
+                }
             }
         }
     }

@@ -13,5 +13,5 @@ import Foundation
     func getCurrentFilePath(with reply: @escaping (String?, Error?) -> Void)
 
     /// Combined operation: get current file path and open in Cursor
-    func jumpToCursor(line: Int, column: Int, with reply: @escaping (Bool, Error?, String?) -> Void)
+    func openInCursor(line: Int, column: Int, with reply: @escaping (Bool, Error?, String?) -> Void)
 }

@@ -8,60 +8,61 @@
 import Foundation
 import SwiftUI
 
-class MainViewModel: ObservableObject {
-    func callXPCService() {
-        // Connect to the XPC service
-        print("📁 Getting current file path from Xcode...")
-
-        // 连接到 XPC Service
-        let connection = NSXPCConnection(serviceName: "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService")
-        connection.remoteObjectInterface = NSXPCInterface(with: EditorJumperForXcodeXPCServiceProtocol.self)
-        connection.resume()
-
-        let service = connection.remoteObjectProxy as? EditorJumperForXcodeXPCServiceProtocol
-        let isSandboxed = ProcessInfo.processInfo.environment["APP_SANDBOX_CONTAINER_ID"] != nil
-        print("Is sandboxed: \(isSandboxed)")
-
-        service?.jumpToCursor(line: 10, column: 1) { success, error, log in
-            print("XPC Service: Jump to cursor \(success ? "succeeded" : "failed")")
-            if let log = log {
-                print("XPC Service: Log: \(log)")
-            }
-            if let error = error {
-                print("XPC Service: Error: \(error)")
-            }
-        }
-    }
-
-//    func test() {
-//        let filePath = "/Users/user/Public/myGithub/ios/EditorJumper-X/EditorJumperForXcodeXPCService/EditorJumperForXcodeXPCService.swift"
-//        let line = 11
-//        let column = 6
-//        let task = Process()
-//        task.launchPath = "/usr/local/bin/cursor"
-//        task.arguments = [
-//            "-g", "\(filePath):\(line):\(column)",
-//        ]
-//
-//        try? task.run()
-//        task.waitUntilExit()
-//    }
-}
-
 struct ContentView: View {
     @StateObject var viewModel = MainViewModel()
+    @EnvironmentObject var appState: AppState
     var body: some View {
         VStack {
+            Text("Editor Jumper for Xcode")
+                .font(.title)
+                .fontWeight(.bold)
+
+            Text("在 Xcode 中使用 Editor → EditorJumper → 菜单命令")
+                .font(.body)
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+
+            VStack(spacing: 10) {
+                Text("可用命令:")
+                    .font(.headline)
+
+                VStack(alignment: .leading, spacing: 5) {
+                    Text("• Open in Cursor - 在 Cursor 中打开当前文件")
+                    Text("• Open Settings - 打开设置页面")
+                }
+                .font(.caption)
+                .foregroundColor(.secondary)
+            }
             Button {
                 print("Button pressed")
-                viewModel.callXPCService()
+                viewModel.openInCursor()
             } label: {
-                Text("Jump to Cursor")
+                Text("测试跳转到 Cursor")
                     .padding()
                     .cornerRadius(8)
             }
+
+            Button {
+                viewModel.showingSettings = true
+            } label: {
+                Text("设置")
+                    .padding()
+            }
+            .buttonStyle(.bordered)
         }
         .padding()
+        .sheet(isPresented: $viewModel.showingSettings) {
+            SettingsView()
+        }
+        .onAppear {
+//                viewModel.checkForSettingsArgument()
+        }
+        .onChange(of: appState.shouldShowSettings) { shouldShow in
+            if shouldShow {
+                viewModel.showingSettings = true
+                appState.shouldShowSettings = false // 重置状态
+            }
+        }
     }
 }
 
