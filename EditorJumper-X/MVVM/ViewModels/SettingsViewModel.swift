@@ -32,7 +32,7 @@ class SettingsViewModel: ObservableObject {
     
     func saveCursorPath() {
         appConfig.cursorPath = cursorPath
-        validationMessage = "✅ 路径保存成功"
+        validationMessage = "✅ Path saved successfully"
         isPathValid = true
     }
     
@@ -44,7 +44,7 @@ class SettingsViewModel: ObservableObject {
     
     func browseCursorPath() {
         let panel = NSOpenPanel()
-        panel.title = "选择 Cursor 可执行文件"
+        panel.title = "Select Cursor Executable File"
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
         panel.canChooseFiles = true
@@ -63,7 +63,7 @@ class SettingsViewModel: ObservableObject {
             cursorPath = detectedPath
             validateCurrentPath()
         } else {
-            validationMessage = "❌ 未找到 Cursor 可执行文件"
+            validationMessage = "❌ Cursor executable file not found"
             isPathValid = false
         }
     }

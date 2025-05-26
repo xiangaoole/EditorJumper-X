@@ -17,18 +17,18 @@ struct ContentView: View {
                 .font(.title)
                 .fontWeight(.bold)
 
-            Text("在 Xcode 中使用 Editor → EditorJumper → 菜单命令")
+            Text("Use Editor → EditorJumper → menu commands in Xcode")
                 .font(.body)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
 
             VStack(spacing: 10) {
-                Text("可用命令:")
+                Text("Available Commands:")
                     .font(.headline)
 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("• Open in Cursor - 在 Cursor 中打开当前文件")
-                    Text("• Open Settings - 打开设置页面")
+                    Text("• Open in Cursor - Open current file in Cursor")
+                    Text("• Open Settings - Open settings page")
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)
@@ -37,7 +37,7 @@ struct ContentView: View {
                 print("Button pressed")
                 viewModel.openInCursor()
             } label: {
-                Text("测试跳转到 Cursor")
+                Text("Test Jump to Cursor")
                     .padding()
                     .cornerRadius(8)
             }
@@ -45,7 +45,7 @@ struct ContentView: View {
             Button {
                 viewModel.showingSettings = true
             } label: {
-                Text("设置")
+                Text("Settings")
                     .padding()
             }
             .buttonStyle(.bordered)
@@ -60,7 +60,7 @@ struct ContentView: View {
         .onChange(of: appState.shouldShowSettings) { shouldShow in
             if shouldShow {
                 viewModel.showingSettings = true
-                appState.shouldShowSettings = false // 重置状态
+                appState.shouldShowSettings = false // Reset state
             }
         }
     }

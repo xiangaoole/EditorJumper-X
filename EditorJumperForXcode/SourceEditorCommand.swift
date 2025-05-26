@@ -22,19 +22,19 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     }
     
     private func openInCursor(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
-        // 获取当前选择（光标位置）
+        // Get current selection (cursor position)
         let selections = invocation.buffer.selections
         var lineNumber = 0
         var columnNumber = 0
         
         if let selection = selections.firstObject as? XCSourceTextRange {
-            lineNumber = selection.start.line + 1 // 转换为1-based
-            columnNumber = selection.start.column + 1 // 转换为1-based
+            lineNumber = selection.start.line + 1 // Convert to 1-based
+            columnNumber = selection.start.column + 1 // Convert to 1-based
         }
         
         print("📍 Line: \(lineNumber), Column: \(columnNumber)")
         
-        // 连接到 XPC Service
+        // Connect to XPC Service
         let connection = NSXPCConnection(serviceName: "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService")
         connection.remoteObjectInterface = NSXPCInterface(with: EditorJumperForXcodeXPCServiceProtocol.self)
         connection.resume()
@@ -64,13 +64,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     private func openSettings(completionHandler: @escaping (Error?) -> Void) {
         print("🔧 Opening Settings...")
         
-        // 使用 Process 启动主应用并传递参数
+        // Use Process to launch main app with arguments
         let process = Process()
         
-        // 获取主应用的路径
+        // Get main app path
         let mainAppBundleID = "com.haroldgao.EditorJumper-X"
         
-        // 尝试通过 Bundle ID 找到应用路径
+        // Try to find app path by Bundle ID
         if let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: mainAppBundleID) {
             let appPath = appURL.appendingPathComponent("Contents/MacOS/EditorJumper-X").path
             
@@ -94,7 +94,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                 }
             }
         } else {
-            // 如果找不到应用，尝试使用 open 命令
+            // If app not found, try using open command
             process.launchPath = "/usr/bin/open"
             process.arguments = ["-b", mainAppBundleID, "--args", "--show-settings"]
             

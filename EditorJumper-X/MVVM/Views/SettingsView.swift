@@ -14,35 +14,35 @@ struct SettingsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
-                Text("Editor Jumper 设置")
+                Text("Editor Jumper Settings")
                     .font(.title2)
                     .fontWeight(.bold)
                 
                 Spacer()
                 
-                Button("关闭") {
+                Button("Close") {
                     dismiss()
                 }
                 .buttonStyle(.bordered)
             }
                     
-            GroupBox("Cursor 路径配置") {
+            GroupBox("Cursor Path Configuration") {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("当前 Cursor 路径:")
+                    Text("Current Cursor Path:")
                         .font(.headline)
                             
                     HStack {
-                        TextField("Cursor 可执行文件路径", text: $viewModel.cursorPath)
+                        TextField("Cursor executable file path", text: $viewModel.cursorPath)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .onChange(of: viewModel.cursorPath) {
                                 viewModel.validateCurrentPath()
                             }
                                 
-                        Button("浏览") {
+                        Button("Browse") {
                             viewModel.browseCursorPath()
                         }
                                 
-                        Button("自动检测") {
+                        Button("Auto Detect") {
                             viewModel.autoDetectCursorPath()
                         }
                     }
@@ -53,7 +53,7 @@ struct SettingsView: View {
                             .font(.caption)
                     }
                             
-                    Text("常见 Cursor 安装位置:")
+                    Text("Common Cursor Installation Locations:")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                             
@@ -67,14 +67,14 @@ struct SettingsView: View {
                                 Spacer()
                                         
                                 if FileManager.default.isExecutableFile(atPath: path) {
-                                    Button("使用") {
+                                    Button("Use") {
                                         viewModel.cursorPath = path
                                         viewModel.saveCursorPath()
                                     }
                                     .buttonStyle(.borderless)
                                     .font(.caption)
                                 } else {
-                                    Text("未找到")
+                                    Text("Not Found")
                                         .font(.caption)
                                         .foregroundColor(.red)
                                 }
@@ -86,13 +86,13 @@ struct SettingsView: View {
             }
                     
             HStack {
-                Button("重置为默认") {
+                Button("Reset to Default") {
                     viewModel.resetToDefault()
                 }
                         
                 Spacer()
                         
-                Button("保存") {
+                Button("Save") {
                     viewModel.saveCursorPath()
                 }
                 .buttonStyle(.borderedProminent)

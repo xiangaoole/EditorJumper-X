@@ -1,6 +1,6 @@
 import Foundation
 
-// 这是一个测试文件，用于测试 EditorJumper-X 扩展
+// This is a test file for testing the EditorJumper-X extension
 // Test file for EditorJumper-X extension
 
 class TestClass {
@@ -8,14 +8,14 @@ class TestClass {
     func testFunction() {
         print("Hello from line 8!")
         
-        // 将光标放在这一行，然后测试扩展
+        // Place cursor on this line, then test the extension
         let testVariable = "This is line 11"
         
         for i in 1...5 {
             print("Loop iteration \(i) - line \(13 + i)")
         }
         
-        // 测试不同的行和列位置
+        // Test different line and column positions
         let anotherTest = "Line 19"
         
         if true {
@@ -24,7 +24,7 @@ class TestClass {
     }
     
     func anotherFunction() {
-        // 这是第二个函数 - line 27
+        // This is the second function - line 27
         let data = [1, 2, 3, 4, 5]
         
         data.forEach { number in
@@ -33,4 +33,4 @@ class TestClass {
     }
 }
 
-// 文件结束 
+// End of file 

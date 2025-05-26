@@ -23,19 +23,19 @@ class EditorJumperForXcodeXPCService: NSObject, EditorJumperForXcodeXPCServicePr
         tell application "Xcode"
             try
                 set windowName to name of window 1
-                -- 处理 Preview 模式：移除 " — Preview" 后缀
+                -- Handle Preview mode: remove " — Preview" suffix
                 if windowName ends with " — Preview" then
                     set windowName to text 1 thru -12 of windowName
                 end if
-                -- 处理 Edited 状态：移除 " — Edited" 后缀
+                -- Handle Edited state: remove " — Edited" suffix
                 if windowName ends with " — Edited" then
                     set windowName to text 1 thru -11 of windowName
                 end if
-                -- 检测特殊的 Preview 窗口
+                -- Detect special Preview windows
                 if windowName ends with " Preview" then
                     return "Error: Cannot get file path from Preview window: " & windowName
                 end if
-                -- 获取文件名（最后一个单词）
+                -- Get filename (last word)
                 set fileName to word -1 of windowName
                 set currentDoc to document 1 whose name is fileName
                 set docPath to path of currentDoc
@@ -64,7 +64,7 @@ class EditorJumperForXcodeXPCService: NSObject, EditorJumperForXcodeXPCServicePr
             DispatchQueue.main.async { if let error = error {
                 print("XPC Service: AppleScript error: \(error)")
                     
-                // 检查权限相关错误
+                // Check permission-related errors
                 var errorMessage = "AppleScript execution failed"
                 if let errorDict = error as? [String: Any],
                    let errorNumber = errorDict["NSAppleScriptErrorNumber"] as? Int
@@ -80,7 +80,7 @@ class EditorJumperForXcodeXPCService: NSObject, EditorJumperForXcodeXPCServicePr
                 }
                     
                 reply(nil, NSError(domain: "EditorJumperError", code: 2, userInfo: [NSLocalizedDescriptionKey: errorMessage]))
-            } else if let stringValue = result.stringValue { // 检查返回值是否以 "Error" 开始，如果是则作为错误处理
+            } else if let stringValue = result.stringValue { // Check if return value starts with "Error", if so treat as error
                 if stringValue.hasPrefix("Error:") {
                     let errorMessage = String(stringValue.dropFirst(6).trimmingCharacters(in: .whitespaces))
                     reply(nil, NSError(domain: "EditorJumperError", code: 4, userInfo: [NSLocalizedDescriptionKey: errorMessage]))

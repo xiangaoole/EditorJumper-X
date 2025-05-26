@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// 应用配置管理类，使用App Group共享UserDefaults
+/// Application configuration management class, using App Group shared UserDefaults
 class AppConfiguration {
     static let shared = AppConfiguration()
     
@@ -28,7 +28,7 @@ class AppConfiguration {
         if let groupDefaults = UserDefaults(suiteName: appGroupIdentifier) {
             self.userDefaults = groupDefaults
         } else {
-            // 如果App Group不可用，回退到标准UserDefaults
+            // If App Group is not available, fallback to standard UserDefaults
             self.userDefaults = UserDefaults.standard
             print("⚠️ App Group UserDefaults not available, using standard UserDefaults")
         }
@@ -36,7 +36,7 @@ class AppConfiguration {
     
     // MARK: - Cursor Path Configuration
     
-    /// 获取Cursor可执行文件路径
+    /// Get Cursor executable file path
     var cursorPath: String {
         get {
             return userDefaults.string(forKey: Keys.cursorPath) ?? DefaultValues.cursorPath
@@ -46,39 +46,39 @@ class AppConfiguration {
         }
     }
     
-    /// 重置Cursor路径为默认值
+    /// Reset Cursor path to default value
     func resetCursorPathToDefault() {
         cursorPath = DefaultValues.cursorPath
     }
     
-    /// 验证Cursor路径是否有效
+    /// Validate if Cursor path is valid
     func validateCursorPath(_ path: String) -> (isValid: Bool, message: String?) {
         guard !path.isEmpty else {
-            return (false, "路径不能为空")
+            return (false, "Path cannot be empty")
         }
         
         let fileManager = FileManager.default
         
-        // 检查文件是否存在
+        // Check if file exists
         guard fileManager.fileExists(atPath: path) else {
-            return (false, "文件不存在: \(path)")
+            return (false, "File does not exist: \(path)")
         }
         
-        // 检查是否为可执行文件
+        // Check if file is executable
         guard fileManager.isExecutableFile(atPath: path) else {
-            return (false, "文件不可执行: \(path)")
+            return (false, "File is not executable: \(path)")
         }
         
-        return (true, "✅ 路径有效")
+        return (true, "✅ Path is valid")
     }
     
-    /// 常见的Cursor安装路径
+    /// Common Cursor installation paths
     static let commonCursorPaths = [
         "/usr/local/bin/cursor",
         "/Applications/Cursor.app/Contents/Resources/app/bin/cursor"
     ]
     
-    /// 自动检测Cursor路径
+    /// Auto-detect Cursor path
     func autoDetectCursorPath() -> String? {
         for path in Self.commonCursorPaths {
             if FileManager.default.isExecutableFile(atPath: path) {

@@ -11,14 +11,14 @@ import AppKit
 class MainViewModel: ObservableObject {
     @Published var showingSettings = false
     
-    // 显示错误 dialog
+    // Show error dialog
     private func showErrorDialog(title: String, message: String) {
         DispatchQueue.main.async {
             let alert = NSAlert()
             alert.messageText = title
             alert.informativeText = message
             alert.alertStyle = .warning
-            alert.addButton(withTitle: "确定")
+            alert.addButton(withTitle: "OK")
             alert.runModal()
         }
     }
@@ -39,7 +39,7 @@ class MainViewModel: ObservableObject {
             }
             if let error = error {
                 print("Error: \(error)")
-                self.showErrorDialog(title: "操作失败", message: error.localizedDescription)
+                self.showErrorDialog(title: "Operation Failed", message: error.localizedDescription)
             }
         }
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// 应用配置管理类，使用App Group共享UserDefaults
+/// Application configuration management class, using App Group shared UserDefaults
 class AppConfiguration {
     static let shared = AppConfiguration()
     
@@ -28,7 +28,7 @@ class AppConfiguration {
         if let groupDefaults = UserDefaults(suiteName: appGroupIdentifier) {
             self.userDefaults = groupDefaults
         } else {
-            // 如果App Group不可用，回退到标准UserDefaults
+            // If App Group is not available, fallback to standard UserDefaults
             self.userDefaults = UserDefaults.standard
             print("⚠️ App Group UserDefaults not available, using standard UserDefaults")
         }
@@ -36,7 +36,7 @@ class AppConfiguration {
     
     // MARK: - Cursor Path Configuration
     
-    /// 获取Cursor可执行文件路径
+    /// Get Cursor executable file path
     var cursorPath: String {
         get {
             return userDefaults.string(forKey: Keys.cursorPath) ?? DefaultValues.cursorPath
