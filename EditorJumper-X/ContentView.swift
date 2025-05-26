@@ -107,7 +107,7 @@ struct ContentView: View {
             HStack {
                 Image(systemName: "info.circle.fill")
                     .foregroundColor(.blue)
-                Text("How to Use")
+                Text("How to install?")
                     .font(.headline)
                     .fontWeight(.medium)
                 Spacer()
@@ -115,21 +115,33 @@ struct ContentView: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 InstructionRow(
-                    icon: "1.circle.fill",
-                    text: "Open any file in Xcode",
-                    color: .blue
+                    icon: "1.circle",
+                    text: "Open System Settings",
+                    color: .secondary
                 )
                 
                 InstructionRow(
-                    icon: "2.circle.fill",
-                    text: "Go to Editor → EditorJumper menu",
-                    color: .green
+                    icon: "2.circle",
+                    text: "In \"General\", click on \"Login Items & Extensions\"",
+                    color: .secondary
                 )
                 
                 InstructionRow(
-                    icon: "3.circle.fill",
-                    text: "Select \"Open in Cursor\" command",
-                    color: .orange
+                    icon: "3.circle",
+                    text: "Below \"Extensions\", click the ⓘ next to \"Xcode Source Editor\"",
+                    color: .secondary
+                )
+                
+                InstructionRow(
+                    icon: "4.circle",
+                    text: "Ensure the checkbox next to \"SwiftFormat for Xcode\" is checked",
+                    color: .secondary
+                )
+                
+                InstructionRow(
+                    icon: "5.circle",
+                    text: "Relaunch Xcode",
+                    color: .secondary
                 )
             }
         }

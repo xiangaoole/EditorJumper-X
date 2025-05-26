@@ -601,7 +601,7 @@
 				DEVELOPMENT_TEAM = QRBH27G89X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper fox Xcode";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
