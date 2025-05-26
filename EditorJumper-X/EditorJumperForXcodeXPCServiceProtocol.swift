@@ -14,4 +14,7 @@ import Foundation
 
     /// Combined operation: get current file path and open in Cursor
     func openInCursor(line: Int, column: Int, with reply: @escaping (Bool, Error?, String?) -> Void)
+    
+    /// Open settings window of the main app
+    func openSettings(with reply: @escaping (Bool, Error?) -> Void)
 }

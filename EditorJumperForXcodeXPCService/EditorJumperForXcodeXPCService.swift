@@ -185,4 +185,53 @@ class EditorJumperForXcodeXPCService: NSObject, EditorJumperForXcodeXPCServicePr
         
         return fileURL.deletingLastPathComponent().path
     }
+    
+    @objc func openSettings(with reply: @escaping (Bool, Error?) -> Void) {
+        print("XPC Service: Opening Settings...")
+        
+        DispatchQueue.global().async {
+            let process = Process()
+            
+            // Get main app path
+            let mainAppBundleID = "com.haroldgao.EditorJumper-X"
+            
+            // Try to find app path by Bundle ID
+            if let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: mainAppBundleID) {
+                let appPath = appURL.appendingPathComponent("Contents/MacOS/EditorJumper-X").path
+                
+                process.launchPath = appPath
+                process.arguments = ["--show-settings"]
+                
+                do {
+                    try process.run()
+                    print("XPC Service: Successfully launched settings")
+                    DispatchQueue.main.async {
+                        reply(true, nil)
+                    }
+                } catch {
+                    print("XPC Service: Failed to launch settings: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        reply(false, error)
+                    }
+                }
+            } else {
+                // If app not found, try using open command
+                process.launchPath = "/usr/bin/open"
+                process.arguments = ["-b", mainAppBundleID, "--args", "--show-settings"]
+                
+                do {
+                    try process.run()
+                    print("XPC Service: Successfully opened settings via open command")
+                    DispatchQueue.main.async {
+                        reply(true, nil)
+                    }
+                } catch {
+                    print("XPC Service: Failed to open settings: \(error.localizedDescription)")
+                    DispatchQueue.main.async {
+                        reply(false, error)
+                    }
+                }
+            }
+        }
+    }
 }

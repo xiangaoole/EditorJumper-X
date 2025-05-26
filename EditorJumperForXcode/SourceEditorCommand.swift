@@ -64,55 +64,36 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     private func openSettings(completionHandler: @escaping (Error?) -> Void) {
         print("🔧 Opening Settings...")
         
-        // Use Process to launch main app with arguments
-        let process = Process()
+        // Connect to XPC Service
+        let connection = NSXPCConnection(serviceName: "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService")
+        connection.remoteObjectInterface = NSXPCInterface(with: EditorJumperForXcodeXPCServiceProtocol.self)
+        connection.resume()
         
-        // Get main app path
-        let mainAppBundleID = "com.haroldgao.EditorJumper-X"
+        let service = connection.remoteObjectProxy as? EditorJumperForXcodeXPCServiceProtocol
         
-        // Try to find app path by Bundle ID
-        if let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: mainAppBundleID) {
-            let appPath = appURL.appendingPathComponent("Contents/MacOS/EditorJumper-X").path
-            
-            process.launchPath = appPath
-            process.arguments = ["--show-settings"]
-            
-            do {
-                try process.run()
-                print("✅ Successfully launched settings")
-                completionHandler(nil)
-            } catch {
-                print("❌ Failed to launch settings: \(error.localizedDescription)")
-                DispatchQueue.main.async {
+        service?.openSettings { success, error in
+            DispatchQueue.main.async {
+                connection.invalidate()
+                
+                if let error = error {
                     let alert = NSAlert()
                     alert.messageText = "Settings Failed"
                     alert.informativeText = "❌ Failed to open settings: \(error.localizedDescription)"
                     alert.alertStyle = .warning
                     alert.addButton(withTitle: "OK")
                     alert.runModal()
-                    completionHandler(error)
-                }
-            }
-        } else {
-            // If app not found, try using open command
-            process.launchPath = "/usr/bin/open"
-            process.arguments = ["-b", mainAppBundleID, "--args", "--show-settings"]
-            
-            do {
-                try process.run()
-                print("✅ Successfully opened settings via open command")
-                completionHandler(nil)
-            } catch {
-                print("❌ Failed to open settings: \(error.localizedDescription)")
-                DispatchQueue.main.async {
+                } else if success {
+                    print("✅ Successfully opened settings")
+                } else {
                     let alert = NSAlert()
                     alert.messageText = "Settings Failed"
-                    alert.informativeText = "❌ Failed to open settings: \(error.localizedDescription)"
+                    alert.informativeText = "❌ Failed to open settings: Unknown error"
                     alert.alertStyle = .warning
                     alert.addButton(withTitle: "OK")
                     alert.runModal()
-                    completionHandler(error)
                 }
+                
+                completionHandler(error)
             }
         }
     }

@@ -31,20 +31,6 @@ struct ContentView: View {
             // Action Buttons
             VStack(spacing: 12) {
                 Button {
-                    print("Button pressed")
-                    viewModel.openInCursor()
-                } label: {
-                    HStack {
-                        Image(systemName: "cursorarrow.rays")
-                        Text("Test Jump to Cursor")
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 8)
-                }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                
-                Button {
                     viewModel.showingSettings = true
                 } label: {
                     HStack {
