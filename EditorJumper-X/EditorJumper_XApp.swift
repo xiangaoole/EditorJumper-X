@@ -28,7 +28,3 @@ struct EditorJumper_XApp: App {
         }
     }
 }
-
-class AppState: ObservableObject {
-    @Published var shouldShowSettings = false
-}

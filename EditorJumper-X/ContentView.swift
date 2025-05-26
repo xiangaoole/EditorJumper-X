@@ -64,7 +64,7 @@ struct ContentView: View {
         .sheet(isPresented: $viewModel.showingSettings) {
             SettingsView()
         }
-        .onChange(of: appState.shouldShowSettings) { shouldShow in
+        .onChange(of: appState.shouldShowSettings) { _, shouldShow in
             if shouldShow {
                 viewModel.showingSettings = true
                 appState.shouldShowSettings = false

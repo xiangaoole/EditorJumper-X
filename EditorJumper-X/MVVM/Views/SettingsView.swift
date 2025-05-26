@@ -13,12 +13,10 @@ struct SettingsView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            // Header
             headerSection
             
             Divider()
             
-            // Content
             ScrollView {
                 VStack(spacing: 24) {
                     cursorPathSection
@@ -29,7 +27,6 @@ struct SettingsView: View {
             
             Divider()
             
-            // Footer
             footerSection
         }
         .background(Color(NSColor.windowBackgroundColor))
