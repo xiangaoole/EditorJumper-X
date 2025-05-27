@@ -112,7 +112,12 @@ struct ContentView: View {
                 InstructionRow(
                     icon: "1.circle",
                     text: "Open System Settings",
-                    color: .secondary
+                    color: .secondary,
+                    action: {
+                        if let url = URL(string: "x-apple.systempreferences:com.apple.LoginItems-Settings.extension") {
+                            NSWorkspace.shared.open(url)
+                        }
+                    }
                 )
                 
                 InstructionRow(
@@ -182,6 +187,14 @@ struct InstructionRow: View {
     let icon: String
     let text: String
     let color: Color
+    let action: (() -> Void)?
+    
+    init(icon: String, text: String, color: Color, action: (() -> Void)? = nil) {
+        self.icon = icon
+        self.text = text
+        self.color = color
+        self.action = action
+    }
     
     var body: some View {
         HStack(spacing: 12) {
@@ -195,6 +208,14 @@ struct InstructionRow: View {
                 .foregroundColor(.primary)
             
             Spacer()
+            
+            if action != nil {
+                Button("Open") {
+                    action?()
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+            }
         }
     }
 }

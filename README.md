@@ -75,14 +75,16 @@ For the best experience, set up the keyboard shortcut **⇧ + ⌥ + O** for quic
 #### For Xcode "Open in Cursor" Menu Item:
 
 1. **Open System Settings** on your Mac
-2. **Go to Keyboard** in the sidebar
-3. **Click "Keyboard Shortcuts..."**
-4. **Select "App Shortcuts"** from the left panel
-5. **Click the "+" button** to add a new shortcut
-6. **Choose "Xcode"** from the Application dropdown
-7. **Enter "Open in Cursor"** as the Menu Title (exact text)
-8. **Set the keyboard shortcut to** `⌘⌥O` (Cmd + Option + O)
-9. **Click "Add"**
+   
+   [Open Keyboard settings for me](x-apple.systempreferences:com.apple.preference.keyboard)
+
+2. **Click "Keyboard Shortcuts..."** button
+3. **Select "App Shortcuts"** from the left panel
+4. **Click the "+" button** to add a new shortcut
+5. **Choose "Xcode"** from the Application dropdown
+6. **Enter "Open in Cursor"** as the Menu Title (exact text)
+7. **Set the keyboard shortcut to** `⌘⌥O` (Cmd + Option + O)
+8. **Click "Add"**
 
 #### For Cursor (using EditorJumper-V):
 
