@@ -1,0 +1,11 @@
+# 1. Update project version numbers
+./update_version.sh
+
+# 2. Update release script version
+# Edit VERSION in create_release.sh
+
+# 3. Build release package
+./create_release.sh
+
+# 4. Update Homebrew formula
+# Update homebrew-cask-formula.rb with generated SHA256
