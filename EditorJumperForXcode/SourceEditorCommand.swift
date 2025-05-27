@@ -14,10 +14,33 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         print("🚀 Extension called!")
         print("📋 Command identifier: \(invocation.commandIdentifier)")
         
+        var isCompletionCalled = false
+
+        func complete(_ error: Error?) {
+            if isCompletionCalled { return }
+            isCompletionCalled = true
+            print("✅ Calling completionHandler")
+            completionHandler(error)
+        }
+        
+        let fallbackTimer = DispatchSource.makeTimerSource()
+        fallbackTimer.schedule(deadline: .now() + 4.5)
+        fallbackTimer.setEventHandler {
+            print("⚠️ Timeout fallback called")
+            complete(nil)
+        }
+        fallbackTimer.resume()
+        
         if invocation.commandIdentifier.hasSuffix(".OpenSettings") {
-            openSettings(completionHandler: completionHandler)
+            openSettings { error in
+                fallbackTimer.cancel()
+                complete(error)
+            }
         } else {
-            openInCursor(with: invocation, completionHandler: completionHandler)
+            openInCursor(with: invocation) { error in
+                fallbackTimer.cancel()
+                complete(error)
+            }
         }
     }
     
@@ -34,17 +57,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         print("📍 Line: \(lineNumber), Column: \(columnNumber)")
         
-        // Connect to XPC Service
-        let connection = NSXPCConnection(serviceName: "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService")
-        connection.remoteObjectInterface = NSXPCInterface(with: EditorJumperForXcodeXPCServiceProtocol.self)
-        connection.resume()
+        guard let service = XPCManager.shared.getService() else {
+            completionHandler(NSError(domain: "XPCServiceUnavailable", code: -1, userInfo: nil))
+            return
+        }
         
-        let service = connection.remoteObjectProxy as? EditorJumperForXcodeXPCServiceProtocol
-        
-        service?.openInCursor(line: lineNumber, column: columnNumber) { _, error, log in
+        service.openInCursor(line: lineNumber, column: columnNumber) { _, error, log in
             DispatchQueue.main.async {
-                connection.invalidate()
-                
                 if let error = error {
                     let alert = NSAlert()
                     alert.messageText = "Jump Failed"
@@ -64,17 +83,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     private func openSettings(completionHandler: @escaping (Error?) -> Void) {
         print("🔧 Opening Settings...")
         
-        // Connect to XPC Service
-        let connection = NSXPCConnection(serviceName: "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService")
-        connection.remoteObjectInterface = NSXPCInterface(with: EditorJumperForXcodeXPCServiceProtocol.self)
-        connection.resume()
+        guard let service = XPCManager.shared.getService() else {
+            completionHandler(NSError(domain: "XPCServiceUnavailable", code: -1, userInfo: nil))
+            return
+        }
         
-        let service = connection.remoteObjectProxy as? EditorJumperForXcodeXPCServiceProtocol
-        
-        service?.openSettings { success, error in
+        service.openSettings { success, error in
             DispatchQueue.main.async {
-                connection.invalidate()
-                
                 if let error = error {
                     let alert = NSAlert()
                     alert.messageText = "Settings Failed"

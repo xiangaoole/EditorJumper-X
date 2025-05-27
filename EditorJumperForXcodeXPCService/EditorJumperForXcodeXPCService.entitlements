@@ -6,12 +6,8 @@
 	<array>
 		<string>group.com.haroldgao.EditorJumper-X</string>
 	</array>
-	<key>com.apple.security.files.downloads.read-write</key>
+	<key>com.apple.security.automation.apple-events</key>
 	<true/>
-	<key>com.apple.security.files.user-selected.read-only</key>
-	<true/>
-	<key>com.apple.security.files.user-selected.read-write</key>
-	<false/>
 	<key>com.apple.security.scripting-targets</key>
 	<dict>
 		<key>com.apple.dt.Xcode</key>
@@ -37,6 +33,10 @@
 		<string>com.apple.lsd.mapdb</string>
 		<string>com.apple.dock.server</string>
 		<string>com.apple.windowserver.active</string>
+	</array>
+	<key>com.apple.security.temporary-exception.shared-preference.read-write</key>
+	<array>
+		<string>com.apple.LaunchServices</string>
 	</array>
 </dict>
 </plist>
