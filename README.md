@@ -16,18 +16,22 @@ A powerful Xcode extension that allows you to seamlessly jump from Xcode to Curs
 Install and update using Homebrew:
 
 ```bash
-brew install --cask editor-jumper-for-xcode
+# Add the tap
+brew tap xiangaoole/tap
+
+# Install the app
+brew install --cask xiangaoole/tap/editor-jumper-for-xcode
 ```
 
 To update:
 
 ```bash
-brew upgrade --cask editor-jumper-for-xcode
+brew upgrade --cask xiangaoole/tap/editor-jumper-for-xcode
 ```
 
 ### Option 2: Manual Installation
 
-1. Download the latest release from the [Releases](https://github.com/your-username/EditorJumper-X/releases) page
+1. Download the latest release from the [Releases](https://github.com/xiangaoole/EditorJumper-X/releases) page
 2. Drag the app to your Applications folder
 3. Follow the setup instructions below
 
@@ -115,4 +119,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/your-username/EditorJumper-X/issues) on GitHub. 
+If you encounter any issues or have questions, please [open an issue](https://github.com/xiangaoole/EditorJumper-X/issues) on GitHub.
+
+## Version Policy
+
+- Homebrew tap always provides the latest version
+- Previous versions remain available as [GitHub Releases](https://github.com/xiangaoole/EditorJumper-X/releases)
+- Users can upgrade with: `brew upgrade --cask xiangaoole/tap/editor-jumper-for-xcode` 
