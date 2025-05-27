@@ -67,3 +67,5 @@ else
 fi
 
 echo "🎉 Release package ready in ${RELEASE_DIR}/" 
+
+gh release create v${VERSION} ${RELEASE_DIR}/${DMG_NAME} --title "EditorJumper-X v${VERSION}" --notes "EditorJumper-X v${VERSION}"

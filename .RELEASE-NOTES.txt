@@ -9,3 +9,5 @@
 
 # 4. Update Homebrew formula
 # Update homebrew-cask-formula.rb with generated SHA256
+
+# 5. Commit homebrew-cask-formula.rb to xiangaoole/homebrew-tap/Casks/e/homebrew-cask-formula.rb
