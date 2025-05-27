@@ -1,6 +1,10 @@
-# EditorJumper-X
-
-A powerful Xcode extension that allows you to seamlessly jump from Xcode to Cursor editor at the exact line and column position.
+<div align="center">
+  <img src="doc/app-icon.png" alt="EditorJumper-X Icon" width="128" height="128">
+  
+  # EditorJumper-X
+  
+  A powerful Xcode extension that allows you to seamlessly jump from Xcode to Cursor editor at the exact line and column position.
+</div>
 
 ## Features
 
@@ -40,6 +44,8 @@ brew upgrade --cask xiangaoole/tap/editor-jumper-for-xcode
 > 📱 **For the best experience**: Download the app first, as it includes clickable buttons that open System Settings directly!
 
 ### Privacy & Security Settings (Required)
+
+![Screenshot1](doc/Screenshot1.png)
 
 Our app uses AppleScript to get the current Xcode file location, which requires special permissions:
 

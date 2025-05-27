@@ -42,6 +42,22 @@ struct ContentView: View {
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.large)
+                
+                // GitHub Link
+                Button {
+                    if let url = URL(string: "https://github.com/xiangaoole/EditorJumper-X") {
+                        NSWorkspace.shared.open(url)
+                    }
+                } label: {
+                    HStack {
+                        Image(systemName: "globe")
+                        Text("View on GitHub")
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 8)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.large)
             }
             .padding(.horizontal, 24)
             .padding(.bottom, 48)
