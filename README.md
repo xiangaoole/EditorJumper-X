@@ -37,13 +37,15 @@ brew upgrade --cask xiangaoole/tap/editor-jumper-for-xcode
 
 ## Setup Instructions
 
+> 📱 **For the best experience**: Download the app first, as it includes clickable buttons that open System Settings directly!
+
 ### Privacy & Security Settings (Required)
 
 Our app uses AppleScript to get the current Xcode file location, which requires special permissions:
 
 1. **On your Mac, choose Apple menu 🍎 > System Settings, then click Privacy & Security 🔒 in the sidebar.** (You may need to scroll down.)
 
-   [Open Privacy & Security settings for me](x-apple.systempreferences:com.apple.preference.security)
+   > 💡 **Quick Link**: [Open Privacy & Security settings](x-apple.systempreferences:com.apple.preference.security) *(This link works when viewing locally on macOS)*
 
 2. **Go to Security, then click Open.**
 
@@ -76,7 +78,7 @@ For the best experience, set up the keyboard shortcut **⇧ + ⌥ + O** for quic
 
 1. **Open System Settings** on your Mac
    
-   [Open Keyboard settings for me](x-apple.systempreferences:com.apple.preference.keyboard)
+   > 💡 **Quick Link**: [Open Keyboard settings](x-apple.systempreferences:com.apple.preference.keyboard) *(This link works when viewing locally on macOS)*
 
 2. **Click "Keyboard Shortcuts..."** button
 3. **Select "App Shortcuts"** from the left panel
@@ -122,6 +124,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 If you encounter any issues or have questions, please [open an issue](https://github.com/xiangaoole/EditorJumper-X/issues) on GitHub.
+
+## Quick Links (macOS only)
+
+*These links work when viewing this README locally on macOS:*
+
+- 🔒 [Privacy & Security Settings](x-apple.systempreferences:com.apple.preference.security)
+- ⌨️ [Keyboard Settings](x-apple.systempreferences:com.apple.preference.keyboard)
+- 🔧 [Login Items & Extensions](x-apple.systempreferences:com.apple.LoginItems-Settings.extension)
+
+*Note: These system links don't work in GitHub's web interface, but they work in the downloaded app and when viewing locally.*
 
 ## Version Policy
 
