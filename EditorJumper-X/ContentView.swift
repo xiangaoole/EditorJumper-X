@@ -83,6 +83,15 @@ struct ContentView: View {
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
+            
+            // Version
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                Text("Version \(version)")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .opacity(0.7)
+                    .padding(.top, 4)
+            }
         }
         .padding(.top, 32)
         .padding(.horizontal, 24)
