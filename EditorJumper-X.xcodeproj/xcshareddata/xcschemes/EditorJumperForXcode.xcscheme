@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE35FEC52DE2B2BB004D8104"
-               BuildableName = "EditorJumperForXcode.appex"
-               BlueprintName = "EditorJumperForXcode"
+               BuildableName = "EditorJumper.appex"
+               BlueprintName = "EditorJumper"
                ReferencedContainer = "container:EditorJumper-X.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,8 +30,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE35FE6C2DE06DA8004D8104"
-               BuildableName = "EditorJumper-X.app"
-               BlueprintName = "EditorJumper-X"
+               BuildableName = "EditorJumper for Xcode.app"
+               BlueprintName = "EditorJumper for Xcode"
                ReferencedContainer = "container:EditorJumper-X.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE35FE6C2DE06DA8004D8104"
-            BuildableName = "EditorJumper-X.app"
-            BlueprintName = "EditorJumper-X"
+            BuildableName = "EditorJumper for Xcode.app"
+            BlueprintName = "EditorJumper for Xcode"
             ReferencedContainer = "container:EditorJumper-X.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -79,8 +79,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE35FE6C2DE06DA8004D8104"
-            BuildableName = "EditorJumper-X.app"
-            BlueprintName = "EditorJumper-X"
+            BuildableName = "EditorJumper for Xcode.app"
+            BlueprintName = "EditorJumper for Xcode"
             ReferencedContainer = "container:EditorJumper-X.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

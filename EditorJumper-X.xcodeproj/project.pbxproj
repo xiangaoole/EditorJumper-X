@@ -219,10 +219,10 @@
 			fileSystemSynchronizedGroups = (
 				CE35FE6F2DE06DA8004D8104 /* EditorJumper-X */,
 			);
-			name = "EditorJumper-X";
+			name = "EditorJumper for Xcode";
 			packageProductDependencies = (
 			);
-			productName = "EditorJumper-X";
+			productName = "EditorJumper for Xcode";
 			productReference = CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -246,10 +246,10 @@
 			fileSystemSynchronizedGroups = (
 				CE35FECC2DE2B2BB004D8104 /* EditorJumperForXcode */,
 			);
-			name = EditorJumperForXcode;
+			name = EditorJumper;
 			packageProductDependencies = (
 			);
-			productName = EditorJumperForXcode;
+			productName = EditorJumper;
 			productReference = CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
