@@ -1,6 +1,6 @@
 cask "editor-jumper-for-xcode" do
-  version "1.2.2"
-  sha256 "f37fb8e63cd9e4e2d33554f6a4abb2cbfc35c6bc2de6bf1ba8d066af50d62f10"
+  version "1.2.6"
+  sha256 "ba69e9c42fd55915e0f9b57294d479347ea84260355d771a05015ee33347679d"
 
   url "https://github.com/xiangaoole/EditorJumper-X/releases/download/v#{version}/EditorJumper-X-#{version}.dmg"
   name "EditorJumper for Xcode"
@@ -12,7 +12,7 @@ cask "editor-jumper-for-xcode" do
     strategy :github_latest
   end
 
-  app "EditorJumper-X.app"
+  app "EditorJumper for Xcode.app"
 
   zap trash: [
     "~/Library/Application Support/EditorJumper-X",

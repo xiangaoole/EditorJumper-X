@@ -5,7 +5,7 @@
 set -e
 
 APP_NAME="EditorJumper-X"
-VERSION="1.2.2"  # 更新为实际版本号
+VERSION="1.2.6"  # 更新为实际版本号
 BUILD_DIR="build"
 RELEASE_DIR="release"
 DMG_NAME="${APP_NAME}-${VERSION}.dmg"
@@ -35,7 +35,7 @@ xcodebuild -exportArchive \
 
 # 创建 DMG
 echo "💿 Creating DMG..."
-APP_PATH="${BUILD_DIR}/export/${APP_NAME}.app"
+APP_PATH="${BUILD_DIR}/export/EditorJumper for Xcode.app"
 
 if [ -d "${APP_PATH}" ]; then
     # 创建临时 DMG 目录
