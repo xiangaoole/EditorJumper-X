@@ -246,10 +246,10 @@
 			fileSystemSynchronizedGroups = (
 				CE35FECC2DE2B2BB004D8104 /* EditorJumperForXcode */,
 			);
-			name = EditorJumperForXcode;
+			name = EditorJumper;
 			packageProductDependencies = (
 			);
-			productName = EditorJumperForXcode;
+			productName = EditorJumper;
 			productReference = CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
@@ -592,8 +592,8 @@
 				DEVELOPMENT_TEAM = QRBH27G89X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
-				INFOPLIST_KEY_CFBundleName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -623,8 +623,8 @@
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = QRBH27G89X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
-				INFOPLIST_KEY_CFBundleName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

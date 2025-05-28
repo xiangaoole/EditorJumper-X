@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE35FEC52DE2B2BB004D8104"
-               BuildableName = "EditorJumperForXcode.appex"
-               BlueprintName = "EditorJumperForXcode"
+               BuildableName = "EditorJumper.appex"
+               BlueprintName = "EditorJumper"
                ReferencedContainer = "container:EditorJumper-X.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
