@@ -97,7 +97,7 @@ For the best experience, set up the keyboard shortcut **⇧ + ⌥ + O** for quic
 4. **Click the "+" button** to add a new shortcut
 5. **Choose "Xcode"** from the Application dropdown
 6. **Enter "Open in Cursor"** as the Menu Title (exact text)
-7. **Set the keyboard shortcut to** `⌘⌥O` (Cmd + Option + O)
+7. **Set the keyboard shortcut to** `⇧⌥O` (Shift + Option + O)
 8. **Click "Add"**
 
 #### For Cursor (using EditorJumper-V):
@@ -106,7 +106,7 @@ For the best experience, set up the keyboard shortcut **⇧ + ⌥ + O** for quic
 2. **Open Cursor Settings** (⌘ + ,)
 3. **Go to Keyboard Shortcuts**
 4. **Search for "EditorJumper"**
-5. **Set the same shortcut** `⌘⌥O` for the jump command
+5. **Set the same shortcut** `⇧⌥O` for the jump command
 
 This creates a consistent keyboard shortcut for seamless bidirectional navigation between Xcode and Cursor.
 
