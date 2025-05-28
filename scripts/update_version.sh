@@ -5,8 +5,8 @@
 set -e
 
 # 设置新版本号
-NEW_VERSION="1.2.2"  # 修改为你想要的版本号
-NEW_BUILD="12020"        # 修改为你想要的构建号
+NEW_VERSION="1.2.4"  # 修改为你想要的版本号
+NEW_BUILD="12040"        # 修改为你想要的构建号
 
 PROJECT_FILE="EditorJumper-X.xcodeproj/project.pbxproj"
 

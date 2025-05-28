@@ -5,7 +5,7 @@
 set -e
 
 APP_NAME="EditorJumper-X"
-VERSION="1.2.2"  # 更新为实际版本号
+VERSION="1.2.4"  # 更新为实际版本号
 BUILD_DIR="build"
 RELEASE_DIR="release"
 DMG_NAME="${APP_NAME}-${VERSION}.dmg"

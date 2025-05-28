@@ -83,7 +83,7 @@
 
 /* Begin PBXFileReference section */
 		464B72682DE47125009E4CE3 /* EditorJumperForXcodeXPCService.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; name = EditorJumperForXcodeXPCService.xpc; path = "../../../Library/Developer/Xcode/DerivedData/EditorJumper-X-dqjdinrkbuxzjzgekhglucmesorn/Build/Products/Release/EditorJumperForXcodeXPCService.xpc"; sourceTree = "<group>"; };
-		CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EditorJumper-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE35FE6D2DE06DA8004D8104 /* EditorJumper for Xcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EditorJumper for Xcode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EditorJumperForXcode.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE35FEC82DE2B2BB004D8104 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE35FECA2DE2B2BB004D8104 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -182,7 +182,7 @@
 		CE35FE6E2DE06DA8004D8104 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */,
+				CE35FE6D2DE06DA8004D8104 /* EditorJumper for Xcode.app */,
 				CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */,
 				CE35FEE22DE2BD14004D8104 /* EditorJumperForXcodeXPCService.xpc */,
 			);
@@ -223,7 +223,7 @@
 			packageProductDependencies = (
 			);
 			productName = "EditorJumper-X";
-			productReference = CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */;
+			productReference = CE35FE6D2DE06DA8004D8104 /* EditorJumper for Xcode.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CE35FEC52DE2B2BB004D8104 /* EditorJumperForXcode */ = {
@@ -246,10 +246,10 @@
 			fileSystemSynchronizedGroups = (
 				CE35FECC2DE2B2BB004D8104 /* EditorJumperForXcode */,
 			);
-			name = EditorJumperForXcode;
+			name = EditorJumper;
 			packageProductDependencies = (
 			);
-			productName = EditorJumperForXcode;
+			productName = EditorJumper;
 			productReference = CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
@@ -520,12 +520,13 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12000;
+				CURRENT_PROJECT_VERSION = 12020;
 				DEVELOPMENT_TEAM = QRBH27G89X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EditorJumper-X/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper for Xcode";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "This app needs to send Apple Events to Xcode to retrieve the current file path and interact with the editor.";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -533,9 +534,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "EditorJumper for Xcode";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				REGISTER_APP_GROUPS = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -554,13 +555,14 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12000;
+				CURRENT_PROJECT_VERSION = 12020;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = QRBH27G89X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EditorJumper-X/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper for Xcode";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "This app needs to send Apple Events to Xcode to retrieve the current file path and interact with the editor.";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -568,9 +570,9 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "EditorJumper for Xcode";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "Editor Jumper for Xcode";
 				REGISTER_APP_GROUPS = YES;
@@ -586,18 +588,19 @@
 				CODE_SIGN_ENTITLEMENTS = EditorJumperForXcode/EditorJumperForXcode.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12000;
+				CURRENT_PROJECT_VERSION = 12020;
 				DEVELOPMENT_TEAM = QRBH27G89X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper fox Xcode";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -615,19 +618,20 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12000;
+				CURRENT_PROJECT_VERSION = 12020;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = QRBH27G89X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper fox Xcode";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcode";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -645,15 +649,16 @@
 				CODE_SIGN_ENTITLEMENTS = EditorJumperForXcodeXPCService/EditorJumperForXcodeXPCService.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12000;
+				CURRENT_PROJECT_VERSION = 12020;
 				DEVELOPMENT_TEAM = QRBH27G89X;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcodeXPCService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EditorJumperForXcodeXPCService;
+				INFOPLIST_KEY_CFBundleName = EditorJumperForXcodeXPCService;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need to control Xcode to retrieve the current file path.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -672,16 +677,17 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 12000;
+				CURRENT_PROJECT_VERSION = 12020;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = QRBH27G89X;
 				ENABLE_HARDENED_RUNTIME = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcodeXPCService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EditorJumperForXcodeXPCService;
+				INFOPLIST_KEY_CFBundleName = EditorJumperForXcodeXPCService;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need to control Xcode to retrieve the current file path.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haroldgao.EditorJumper-X.EditorJumperForXcodeXPCService";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

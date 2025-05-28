@@ -1,6 +1,6 @@
 cask "editor-jumper-for-xcode" do
-  version "1.2.2"
-  sha256 "f37fb8e63cd9e4e2d33554f6a4abb2cbfc35c6bc2de6bf1ba8d066af50d62f10"
+  version "1.2.4"
+  sha256 "5494d2ce2c7e6954b28db2640bf807d3120fdeaa530f0ee5c97ef8bd0c14f609"
 
   url "https://github.com/xiangaoole/EditorJumper-X/releases/download/v#{version}/EditorJumper-X-#{version}.dmg"
   name "EditorJumper for Xcode"
