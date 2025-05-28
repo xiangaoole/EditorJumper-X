@@ -526,6 +526,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EditorJumper-X/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper for Xcode";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "This app needs to send Apple Events to Xcode to retrieve the current file path and interact with the editor.";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,6 +562,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EditorJumper-X/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper for Xcode";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "This app needs to send Apple Events to Xcode to retrieve the current file path and interact with the editor.";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -590,7 +592,8 @@
 				DEVELOPMENT_TEAM = QRBH27G89X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper fox Xcode";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper for Xcode";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -620,7 +623,8 @@
 				"DEVELOPMENT_TEAM[sdk=macosx*]" = QRBH27G89X;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcode/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper fox Xcode";
+				INFOPLIST_KEY_CFBundleDisplayName = "Editor Jumper for Xcode";
+				INFOPLIST_KEY_CFBundleName = "Editor Jumper for Xcode";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -651,6 +655,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcodeXPCService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EditorJumperForXcodeXPCService;
+				INFOPLIST_KEY_CFBundleName = EditorJumperForXcodeXPCService;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need to control Xcode to retrieve the current file path.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				MARKETING_VERSION = 1.2.2;
@@ -679,6 +684,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EditorJumperForXcodeXPCService/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = EditorJumperForXcodeXPCService;
+				INFOPLIST_KEY_CFBundleName = EditorJumperForXcodeXPCService;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "We need to control Xcode to retrieve the current file path.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				MARKETING_VERSION = 1.2.2;
