@@ -12,7 +12,7 @@ cask "editor-jumper-for-xcode" do
     strategy :github_latest
   end
 
-  app "EditorJumper-X.app"
+  app "EditorJumper for Xcode.app"
 
   zap trash: [
     "~/Library/Application Support/EditorJumper-X",

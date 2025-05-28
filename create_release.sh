@@ -35,7 +35,7 @@ xcodebuild -exportArchive \
 
 # 创建 DMG
 echo "💿 Creating DMG..."
-APP_PATH="${BUILD_DIR}/export/${APP_NAME}.app"
+APP_PATH="${BUILD_DIR}/export/EditorJumper for Xcode.app"
 
 if [ -d "${APP_PATH}" ]; then
     # 创建临时 DMG 目录

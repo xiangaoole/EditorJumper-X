@@ -83,7 +83,7 @@
 
 /* Begin PBXFileReference section */
 		464B72682DE47125009E4CE3 /* EditorJumperForXcodeXPCService.xpc */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.xpc-service"; name = EditorJumperForXcodeXPCService.xpc; path = "../../../Library/Developer/Xcode/DerivedData/EditorJumper-X-dqjdinrkbuxzjzgekhglucmesorn/Build/Products/Release/EditorJumperForXcodeXPCService.xpc"; sourceTree = "<group>"; };
-		CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EditorJumper-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE35FE6D2DE06DA8004D8104 /* EditorJumper for Xcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EditorJumper for Xcode.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EditorJumperForXcode.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE35FEC82DE2B2BB004D8104 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE35FECA2DE2B2BB004D8104 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -182,7 +182,7 @@
 		CE35FE6E2DE06DA8004D8104 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */,
+				CE35FE6D2DE06DA8004D8104 /* EditorJumper for Xcode.app */,
 				CE35FEC62DE2B2BB004D8104 /* EditorJumperForXcode.appex */,
 				CE35FEE22DE2BD14004D8104 /* EditorJumperForXcodeXPCService.xpc */,
 			);
@@ -223,7 +223,7 @@
 			packageProductDependencies = (
 			);
 			productName = "EditorJumper-X";
-			productReference = CE35FE6D2DE06DA8004D8104 /* EditorJumper-X.app */;
+			productReference = CE35FE6D2DE06DA8004D8104 /* EditorJumper for Xcode.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CE35FEC52DE2B2BB004D8104 /* EditorJumperForXcode */ = {

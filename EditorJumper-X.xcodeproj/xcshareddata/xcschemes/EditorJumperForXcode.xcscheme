@@ -30,7 +30,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE35FE6C2DE06DA8004D8104"
-               BuildableName = "EditorJumper-X.app"
+               BuildableName = "EditorJumper for Xcode.app"
                BlueprintName = "EditorJumper-X"
                ReferencedContainer = "container:EditorJumper-X.xcodeproj">
             </BuildableReference>
@@ -61,7 +61,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE35FE6C2DE06DA8004D8104"
-            BuildableName = "EditorJumper-X.app"
+            BuildableName = "EditorJumper for Xcode.app"
             BlueprintName = "EditorJumper-X"
             ReferencedContainer = "container:EditorJumper-X.xcodeproj">
          </BuildableReference>
@@ -79,7 +79,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE35FE6C2DE06DA8004D8104"
-            BuildableName = "EditorJumper-X.app"
+            BuildableName = "EditorJumper for Xcode.app"
             BlueprintName = "EditorJumper-X"
             ReferencedContainer = "container:EditorJumper-X.xcodeproj">
          </BuildableReference>
