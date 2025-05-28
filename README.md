@@ -33,6 +33,12 @@ To update:
 brew upgrade --cask xiangaoole/tap/editor-jumper-for-xcode
 ```
 
+To delete:
+
+```bash
+brew uninstall --cask xiangaoole/tap/editor-jumper-for-xcode
+```
+
 ### Option 2: Manual Installation
 
 1. Download the latest release from the [Releases](https://github.com/xiangaoole/EditorJumper-X/releases) page
