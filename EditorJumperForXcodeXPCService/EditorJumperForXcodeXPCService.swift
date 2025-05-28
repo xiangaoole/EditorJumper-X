@@ -56,72 +56,72 @@ class EditorJumperForXcodeXPCService: NSObject, EditorJumperForXcodeXPCServicePr
             return
         }
             
-        print("XPC Service: AppleScript created, executing...")
-        let result = script.executeAndReturnError(&error)
+        DispatchQueue.global(qos: .userInitiated).async {
+            print("XPC Service: AppleScript created, executing...")
+            let result = script.executeAndReturnError(&error)
             
-        if let error = error {
-            print("XPC Service: AppleScript error: \(error)")
-                    
-            // Check permission-related errors
-            var errorMessage = "AppleScript execution failed"
-            if let errorDict = error as? [String: Any],
-               let errorNumber = errorDict["NSAppleScriptErrorNumber"] as? Int
-            {
-                switch errorNumber {
-                case -1743:
-                    errorMessage = "Permission denied. Please grant automation permission to EditorJumper-X in System Preferences > Security & Privacy > Privacy > Automation"
-                case -1728:
-                    errorMessage = "Xcode is not running or not found"
-                default:
-                    errorMessage = "AppleScript error: \(errorNumber)"
+            if let error = error {
+                print("XPC Service: AppleScript error: \(error)")
+                
+                // Check permission-related errors
+                var errorMessage = "AppleScript execution failed"
+                if let errorDict = error as? [String: Any],
+                   let errorNumber = errorDict["NSAppleScriptErrorNumber"] as? Int
+                {
+                    switch errorNumber {
+                    case -1743:
+                        errorMessage = "Permission denied. Please grant automation permission to EditorJumper-X in System Preferences > Security & Privacy > Privacy > Automation"
+                    case -1728:
+                        errorMessage = "Xcode is not running or not found"
+                    default:
+                        errorMessage = "AppleScript error: \(errorNumber)"
+                    }
                 }
-            }
-                    
-            reply(nil, NSError(domain: "EditorJumperError", code: 2, userInfo: [NSLocalizedDescriptionKey: errorMessage]))
-        } else if let stringValue = result.stringValue { // Check if return value starts with "Error", if so treat as error
-            if stringValue.hasPrefix("Error:") {
-                let errorMessage = String(stringValue.dropFirst(6).trimmingCharacters(in: .whitespaces))
-                reply(nil, NSError(domain: "EditorJumperError", code: 4, userInfo: [NSLocalizedDescriptionKey: errorMessage]))
+                
+                reply(nil, NSError(domain: "EditorJumperError", code: 2, userInfo: [NSLocalizedDescriptionKey: errorMessage]))
+            } else if let stringValue = result.stringValue { // Check if return value starts with "Error", if so treat as error
+                if stringValue.hasPrefix("Error:") {
+                    let errorMessage = String(stringValue.dropFirst(6).trimmingCharacters(in: .whitespaces))
+                    reply(nil, NSError(domain: "EditorJumperError", code: 4, userInfo: [NSLocalizedDescriptionKey: errorMessage]))
+                } else {
+                    reply(stringValue, nil)
+                }
             } else {
-                reply(stringValue, nil)
+                print("XPC Service: AppleScript returned no result")
+                reply(nil, NSError(domain: "EditorJumperError", code: 3, userInfo: [NSLocalizedDescriptionKey: "No result from AppleScript"]))
             }
-        } else {
-            print("XPC Service: AppleScript returned no result")
-            reply(nil, NSError(domain: "EditorJumperError", code: 3, userInfo: [NSLocalizedDescriptionKey: "No result from AppleScript"]))
         }
     }
     
     private func openInCursor(filePath: String, line: Int, column: Int, with reply: @escaping (Bool, Error?, String?) -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            // Use /usr/bin/open to launch Cursor with arguments in sandbox environment
-            let process = Process()
-            process.launchPath = "/usr/bin/open"
+        // Use /usr/bin/open to launch Cursor with arguments in sandbox environment
+        let process = Process()
+        process.launchPath = "/usr/bin/open"
             
-            // Prepare arguments for opening Cursor with specific file and line
-            process.arguments = [
-                "-a", self.cursorPath,
-                "--args",
-                "-g", "\(filePath):\(line):\(column)",
-                "-a", "\(self.getProjectPath(filePath))"
-            ]
+        // Prepare arguments for opening Cursor with specific file and line
+        process.arguments = [
+            "-a", cursorPath,
+            "--args",
+            "-g", "\(filePath):\(line):\(column)",
+            "-a", "\(getProjectPath(filePath))",
+        ]
             
-            do {
-                try process.run()
-                process.waitUntilExit()
+        do {
+            try process.run()
+            process.waitUntilExit()
                 
-                if process.terminationStatus == 0 {
-                    let log = "XPC Service: Successfully opened Cursor with \(self.cursorPath) -g \(filePath):\(line):\(column)"
-                    print(log)
-                    reply(true, nil, log)
-                } else {
-                    let log = "XPC Service: Failed to open file in Cursor, exit code: \(process.terminationStatus)"
-                    print(log)
-                    reply(false, NSError(domain: "EditorJumperError", code: 4, userInfo: [NSLocalizedDescriptionKey: "Failed to open Cursor"]), log)
-                }
-            } catch {
-                print("XPC Service: Failed to launch Cursor: \(error.localizedDescription)")
-                reply(false, error, nil)
+            if process.terminationStatus == 0 {
+                let log = "XPC Service: Successfully opened Cursor with \(cursorPath) -g \(filePath):\(line):\(column)"
+                print(log)
+                reply(true, nil, log)
+            } else {
+                let log = "XPC Service: Failed to open file in Cursor, exit code: \(process.terminationStatus)"
+                print(log)
+                reply(false, NSError(domain: "EditorJumperError", code: 4, userInfo: [NSLocalizedDescriptionKey: "Failed to open Cursor"]), log)
             }
+        } catch {
+            print("XPC Service: Failed to launch Cursor: \(error.localizedDescription)")
+            reply(false, error, nil)
         }
     }
     
